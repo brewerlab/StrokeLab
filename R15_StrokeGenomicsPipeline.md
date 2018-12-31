@@ -3,7 +3,7 @@
 Michael Brewer
 2018-11-14
 
-*_running on keenelab@150.216.83.25_*
+*_running on @XXX.25_*
 
 ```
 mkdir 2018_R15_NGS_data
