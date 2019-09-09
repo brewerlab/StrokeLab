@@ -1,4 +1,4 @@
-#Recurrent stroke R15 genomics pipeline
+# Recurrent stroke R15 genomics pipeline
 
 Michael Brewer
 2018-11-14
@@ -13,7 +13,7 @@ mkdir appreci8_stuff
 
 Downloaded from Vanderbuilt Box.com account via Firefox
 
-##QC
+## QC
 
 ```
 for FileName in *R1_001.fastq.gz
@@ -22,7 +22,7 @@ for FileName in *R1_001.fastq.gz
 done
 ```
 
-###Resynchronizing paired-end files
+### Resynchronizing paired-end files
 
 **NOT NECESSARY; REMOVED**
 
@@ -38,16 +38,16 @@ mkdir QCed
 mv *FASTP.fastq.gz QCed/
 ```
 
-##Read mapping
+## Read mapping
 
-###Prepare databases for mapping
+### Prepare databases for mapping
 
 ```
 wget ftp://igenome:G3nom3s4u@ussd-ftp.illumina.com/Homo_sapiens/UCSC/hg38/Homo_sapiens_UCSC_hg38.tar.gz
 tar -xvf Homo_sapiens_UCSC_hg38.tar.gz
 ```
 
-###Mapping
+### Mapping
 
 **bwa-mem_mapper.sh**
 
@@ -82,7 +82,7 @@ for FileName in QCed/*R1*.gz; do name=`ls $FileName | cut -d"_" -f1,2`
 done
 ```
 
-###Filter for unique mappings and removing duplicates
+### Filter for unique mappings and removing duplicates
 
 ```
 for FileName in QCed/*.bam; do
@@ -92,7 +92,7 @@ for FileName in QCed/*.bam; do
 done
 ```
 
-###Mark/Remove Duplicates
+### Mark/Remove Duplicates
 
 **NOT NEEDED; REMOVED**
 
@@ -102,9 +102,9 @@ done
 #done
 ```
 
-##Variant calling
+## Variant calling
 
-###GATK4
+### GATK4
 
 *Haplotypecaller*
 
